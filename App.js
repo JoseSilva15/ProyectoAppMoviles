@@ -16,7 +16,7 @@ import CompraScreen from './screens/CompraScreen';
 import ExplorarScreen from './screens/ExplorarScreen';
 import InicioScreen from './screens/InicioScreen';
 import CuentaScreen from './screens/CuentaScreen';
-import VenderScreen from './screens/VenderScreen';
+
 
 const Stack = createNativeStackNavigator();
 const AuthenticatedUserContext = createContext({});
@@ -38,7 +38,8 @@ function ChatStack (){
       <Stack.Screen name="Vende y compra celulares" component={Home2} />
       <Stack.Screen name="Promociones" component={InicioScreen}/>
       <Stack.Screen name="Explorar" component={ExplorarScreen}/>
-      <Stack.Screen name="Cuenta" component={CuentaScreen}/>
+      <Stack.Screen name="Actualiza los datos de tu cuenta" component={CuentaScreen}/>
+      <Stack.Screen name="Datos de envío" component={CompraScreen}/>
       <Stack.Screen name="Agregar nuevo celular" component={Add} options={{presentation: 'modal'}} />
     </Stack.Navigator>
   );

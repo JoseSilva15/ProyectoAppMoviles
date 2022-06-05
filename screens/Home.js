@@ -58,7 +58,7 @@ const Home = () => {
                 <Entypo name="plus" size={24} color={colors.lightGray} />
             </TouchableOpacity>
             <TouchableOpacity
-                onPress={() => navigation.navigate("Cuenta")}
+                onPress={() => navigation.navigate("Actualiza los datos de tu cuenta")}
                 style={styles.chatButton}
             >
                 <Entypo name="user" size={24} color={colors.lightGray} />

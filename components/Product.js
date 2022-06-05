@@ -3,6 +3,8 @@ import * as RN from 'react-native';
 import { database } from '../config/firebase';
 import { deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import { AntDesign } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function Product({
     id,
@@ -14,6 +16,8 @@ export default function Product({
     isSold,
 }) {
 
+    const navigation = useNavigation();
+
     const onDelete = () => {
         const docRef = doc(database, 'products', id);
         deleteDoc(docRef);
@@ -21,6 +25,7 @@ export default function Product({
 
     const onEdit = () => {
         const docRef = doc(database, 'products', id);
+        navigation.navigate("Datos de envío");
         updateDoc(docRef, {
             isSold: true,
         });
@@ -39,7 +44,7 @@ export default function Product({
             {isSold ? (
                     <RN.TouchableOpacity 
                     style={[styles.button, {backgroundColor: 'gray'}]}>
-                    <RN.Text style={styles.buttonText}>Sold</RN.Text>
+                    <RN.Text style={styles.buttonText}>Vendido</RN.Text>
                 </RN.TouchableOpacity>
                 )
                 : (
